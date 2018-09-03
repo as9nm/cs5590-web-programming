@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rps</title>
+</head>
+<body>
+<h1>Rock, Paper, Scissors</h1>
+<style>
+  body {
+    background-color: coral;
+  }
+</style>
+  <script>
+    var userCh = prompt("choose Any One rock, paper or scissors?");
+    if (! userCh) {
+      document.write("<p>choose one o the above .</p>");
+    } else {
+      document.write("<p>Player 1:" + " " + userCh + "</p>");
+    }
+    var computerCh = Math.random();
+    if (computerCh < 0.34) {
+      computerCh = "paper";
+    } else if(computerCh <= 0.67) {
+      computerCh = "scissors";
+    } else {
+      computerCh = "rock";
+    }
+    // Display computer ch
+    document.write("<p>Computer:" + " " + computerCh + "</p>");
+    var compare = function(ch1,ch2) {
+      if (ch1 === ch2) {
+        return "It's a tie!";
+      }
+      if (ch1 === "rock") {
+        if (ch2 === "scissors") {
+          return "You win! Winner Winner Chicken Dinner";
+        } else {
+          return "You lose! Don't Give up";
+        }
+      }
+      if (ch1 === "paper") {
+        if (ch2 === "rock") {
+          // paper wins
+          return "You win! Winner Winner Chicken Dinner";
+        } else {
+          // scissors wins
+          return "You lose! Don't Give up ";
+        }
+      }
+      if (ch1 === "scissors") {
+        if (ch2 === "rock") {
+          // rock wins
+          return "You lose! Don't Give up";
+        } else {
+          // scissors wins
+          return "You win! Winner Winner Chicken Dinner";
+        }
+      }
+    };
+    var results = compare(userCh,computerCh);
+    document.write("<br><br>" + results);
+  </script>
+
+</div>
+</body>
+</html>
